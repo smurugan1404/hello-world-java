@@ -14,7 +14,13 @@ public class HelloWorld {
 }
 ```
 
+
+
 Notice that `System.out.println("Hello world!");` shows the string `"Hello world!"` on the screen.
+
+Observe as well that the `System.out.print("Hello world!");` shows the string `"Hello world!"` on the terminal.
+
+You also realize that `System.out.println("Hello world!");` shows the string `"Hello world!"` on the terminal.
 
 ## Compile program
 
@@ -24,11 +30,26 @@ To compile the "Hello World" program, type the following:
 javac HelloWorld.java
 ```
 
+
+```console
+javac HelloWorldJava.java
+```
+
+```console
+javac HelloWorldJ.java
+```
+
 ## Excute the program
 
 To execute the program, type this:
 
 ```console
 java HelloWorld
+```
+```console
+java HelloWorldJava
+```
+```console
+javac HelloWorldJ
 ```
 
