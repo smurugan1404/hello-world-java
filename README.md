@@ -36,6 +36,8 @@ Observe as well that the `System.out.print("Hello world!");` shows the string `"
 
 You also realize that `System.out.println("Hello world!");` shows the string `"Hello world!"` on the terminal.
 
+ **The only difference between the methods is how the strings are printed onto the terminal and the positioning of the cursor on the line**
+
 ## Compile program
 
 To compile the "Hello World" program, type the following:
