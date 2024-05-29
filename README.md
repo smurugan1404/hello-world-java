@@ -14,6 +14,20 @@ public class HelloWorld {
 }
 ```
 
+```java
+  public class HelloWorldJava{
+  public static void main(String[] args) {
+    System.out.printf("Hello world!");
+  }
+}
+```
+```java
+ public class HelloWorldJ{
+  public static void main(String[] args) {
+    System.out.print("Hello world!");
+  }
+```
+
 
 
 Notice that `System.out.println("Hello world!");` shows the string `"Hello world!"` on the screen.
