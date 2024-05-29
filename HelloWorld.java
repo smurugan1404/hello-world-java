@@ -1,6 +1,7 @@
 public class HelloWorld {
   public static void main(String[] args) {
     System.out.println("Hello world!");
+    
   }
 }
 
@@ -9,6 +10,7 @@ public class HelloWorld {
   public class HelloWorldJava{
   public static void main(String[] args) {
     System.out.printf("Hello world!");
+    
   }
 }
 
@@ -16,5 +18,6 @@ public class HelloWorld {
 public class HelloWorldJ{
   public static void main(String[] args) {
     System.out.print("Hello world!");
+    
   }
 }
