@@ -10,6 +10,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo "Enterd the build stage: "
+                sleep  20
                 echo "${env.GIT_URL}"
             }
         }
