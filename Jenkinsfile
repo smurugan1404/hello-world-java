@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo "TESTING"
-                sh 'java HelloWorld'
+                sh 'java HelloWorld.java'
             }
         }
     }
