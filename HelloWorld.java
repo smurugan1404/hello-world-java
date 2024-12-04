@@ -5,6 +5,6 @@ public class HelloWorld {
     System.out.println("WELCOME TO GITHUB dsfs ");
     System.out.println("WELCOME TO GITHUB");
     System.out.println("WELCOME TO GITHUBjhbsd12"); 
-    System.out.println("WELCOME Hello world");
+    System.out.println("WELCOME Hello world ");
   }
 }
