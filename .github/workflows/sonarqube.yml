@@ -1,0 +1,43 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - master  # or the branch you want to run the analysis on
+  pull_request:
+    branches:
+      - master  # or the branch you want to run the analysis on
+
+jobs:
+  sonarQube:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK (if your project is Java-based, else use appropriate setup for your language)
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'  # Adjust to your project's Java version
+
+    - name: Cache SonarQube dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar-${{ hashFiles('**/sonar-project.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-sonar-
+
+    - name: Install dependencies (if needed, e.g., npm, Maven, etc.)
+      run: |
+        # Replace with your package manager (e.g., npm install, mvn install, etc.)
+        npm install  # Example for Node.js project
+
+    - name: SonarQube Scan
+      uses: sonarsource/sonarcloud-github-action@v2
+      with:
+        organization: 'Testing-organization'  # Only if using SonarCloud
+        projectKey: 'testing-organization1_testing-sonar-project'
+        projectName: 'testing-sonar-project'
+        token: ${{ secrets.SONAR_TOKEN }}
