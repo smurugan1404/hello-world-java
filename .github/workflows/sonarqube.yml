@@ -53,6 +53,7 @@ jobs:
         projectBaseDir: .
         args: >
           -Dsonar.organization=adityaraj270392
+          -Dsonar.projectKey=b2bc80d20b875d69b8a8a369aea71424a00a1bf0
           -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
       env:
