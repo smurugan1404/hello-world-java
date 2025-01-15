@@ -30,11 +30,19 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-sonar-
 
-    - name: Install dependencies (Maven)
-      run: mvn clean install
+    # - name: Install dependencies (Maven)
+    #   run: mvn clean install
+
+    - name: Cache Maven dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
 
     - name: Install dependencies and run tests (Maven)
-      run: mvn clean verify
+      run: mvn clean verify -Pcoverage
 
     # - name: Run Tests with JaCoCo (Code Coverage)
     #   run: mvn test
@@ -48,3 +56,4 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
