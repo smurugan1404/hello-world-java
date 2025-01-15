@@ -21,7 +21,9 @@ jobs:
       with:
         distribution: 'temurin' # or 'adopt'
         java-version: '11'
-
+    - name: Build with Maven
+      run: mvn compile
+      
     - name: Cache SonarQube dependencies
       uses: actions/cache@v3
       with:
@@ -58,4 +60,5 @@ jobs:
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_SCANNER_OPTS: '-Dsonar.java.binaries=target/classes'
       
