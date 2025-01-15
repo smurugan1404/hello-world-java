@@ -36,8 +36,8 @@ jobs:
     - name: Install dependencies and run tests (Maven)
       run: mvn clean verify
 
-    - name: Run Tests with JaCoCo (Code Coverage)
-      run: mvn test
+    # - name: Run Tests with JaCoCo (Code Coverage)
+    #   run: mvn test
       
     - name: SonarQube Scan
       uses: sonarsource/sonarcloud-github-action@v2
@@ -45,5 +45,6 @@ jobs:
         projectBaseDir: .
         args: >
           -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
