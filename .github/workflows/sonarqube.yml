@@ -49,11 +49,12 @@ jobs:
     # - name: Run Tests with JaCoCo (Code Coverage)
     #   run: mvn test
     - name: Build and run tests with Maven and SonarQube
-      run: mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+      run: mvn clean install \
         -Dsonar.projectKey=adityaraj270392_hello-world-java \
         -Dsonar.host.url=https://sonarcloud.io \
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml 
+        -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
+        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+         org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
     # - name: SonarQube Scan
     #   uses: sonarsource/sonarcloud-github-action@v2
     #   with:
