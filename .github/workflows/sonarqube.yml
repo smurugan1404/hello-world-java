@@ -3,10 +3,10 @@ name: SonarQube Analysis
 on:
   push:
     branches:
-      - master  # or the branch you want to run the analysis on
+      - main  # or the branch you want to run the analysis on
   pull_request:
     branches:
-      - master  # or the branch you want to run the analysis on
+      - main  # or the branch you want to run the analysis on
 
 jobs:
   sonarQube:
