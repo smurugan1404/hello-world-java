@@ -9,8 +9,7 @@ This is the source code of the program:
 ```java
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-    System.out.println("A lot of Opportunities of IT World");
+    System.out.println("Hello world! A lot of Opportunities of IT World");
   }
 }
 ```
